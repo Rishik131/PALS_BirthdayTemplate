@@ -1,7 +1,7 @@
-const cafeList = document.querySelector("#birthday-list")
+const birthdayList = document.querySelector("#birthday-list")
 const form = document.querySelector("#add-birthday-form");
 
-function renderCafe(doc){
+function renderBirthday(doc){
   let li=document.createElement('li');
   let firstName = document.createElement('span')
   let lastName = document.createElement('span')
@@ -25,7 +25,7 @@ function renderCafe(doc){
   li.appendChild(phone);
   li.appendChild(cross);
 
-  cafeList.appendChild(li);
+  birthdayList.appendChild(li);
 
   // DELETING DATA 
   cross.addEventListener('click', (e)=>{
@@ -35,12 +35,6 @@ function renderCafe(doc){
   })
 }
 
-// GETTING DATA 
-db.collection('Birthdays').get().then((snapshot) => {
-  snapshot.docs.forEach(doc=>{
-    renderCafe(doc);
-  })
-})
 
 // SAVING DATA 
 form.addEventListener('submit', (e)=>{
@@ -57,4 +51,17 @@ form.addEventListener('submit', (e)=>{
   form.email.value='';
   form.dob.value='';
   form.phone.value=''
+});
+
+// REAL TIME LISTENER 
+db.collection("Birthdays").orderBy("FirstName").onSnapshot(snapshot=>{
+  let changes = snapshot.docChanges();
+  changes.forEach(change =>{
+    if(change.type == 'added'){
+      renderBirthday(change.doc);
+    }else if(change.type=='removed'){
+      let li = birthdayList.querySelector('[data-id='+change.doc.id + ']');
+      birthdayList.removeChild(li);
+    }
+  })
 })
