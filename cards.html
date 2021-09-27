@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PALS Happy Birthday</title>
     <link rel="stylesheet" href="cards.css">
-    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
 </head>
 <body>
     <div class="container">
@@ -16,35 +16,40 @@
         <div></div>
     </div>
     <div class="container">
-        <div></div>
         <div class="outline">
-            <div class="nm_field">Name: </div><div class=nm_value></div><br>
-            <div class="dept_field">Department: </div><div class=dept_value></div>
+            <form action="/action_page.php" method="get" id="form1">
+                <label for="fname">First name:</label>
+                <input type="text" id="fname" name="fname"><br><br>
+                <label for="lname">Last name:</label>
+                <input type="text" id="lname" name="lname"><br><br>
+                <label for="email">Email ID:</label>
+                <input type="text" id="email" name="email"><br><br>
+                <label for="email">DOB:</label>
+                <input type="date" id="dob" name="dob"><br><br>
+                <label for="phone">Phone No:</label>
+                <input type="tel" id="phone" name="phone">
+            </form><br>
+            
+            <button type="submit" form="form1" value="Submit">Submit</button><br><br>
+            <ul id="birthday-list"></ul>
         </div>
-        <div></div>
+        
     </div>
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyBCR_LIMwUvoNV6_r0MhOzX3e1Eaver5oI",
-          authDomain: "pals---birthday-template.firebaseapp.com",
-          projectId: "pals---birthday-template",
-          storageBucket: "pals---birthday-template.appspot.com",
-          messagingSenderId: "828046318515",
-          appId: "1:828046318515:web:7f7cdd9e5dd18f700409c6",
-          measurementId: "G-VPJE1HEBPS"
-        };
-      
-        // Initialize Firebase
-        firebase.initializeApp(config)
-        const db= firebase.firestore();
-        db.settings({timestampsInSnapshots: true});
+    <script>
+            const firebaseConfig = {
+                apiKey: "AIzaSyC26Nf6Uwzf7dOrrw2DXWfMlXYLRITX1hw",
+                authDomain: "pals-birthday.firebaseapp.com",
+                projectId: "pals-birthday",
+                storageBucket: "pals-birthday.appspot.com",
+                messagingSenderId: "869643730097",
+                appId: "1:869643730097:web:b41eb9e1718a98c3173690",
+                measurementId: "G-8GWP10QEJF"
+            };
+            firebase.initializeApp(firebaseConfig);
+            const db= firebase.firestore();
+            db.settings({ timestampsInSnapshots: true});
       </script>
+
       <script src="cards.js"></script>
 </body>
 </html>
