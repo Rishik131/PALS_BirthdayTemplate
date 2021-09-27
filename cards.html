@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,47 +10,43 @@
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
 </head>
+
 <body>
     <div class="container">
-        <div></div>
-        <h1>HAPPY BIRTHDAY!</h1>
-        <div></div>
-    </div>
-    <div class="container">
-        <div class="outline">
-            <form action="/action_page.php" method="get" id="form1">
-                <label for="fname">First name:</label>
-                <input type="text" id="fname" name="fname"><br><br>
-                <label for="lname">Last name:</label>
-                <input type="text" id="lname" name="lname"><br><br>
-                <label for="email">Email ID:</label>
-                <input type="text" id="email" name="email"><br><br>
-                <label for="email">DOB:</label>
-                <input type="date" id="dob" name="dob"><br><br>
-                <label for="phone">Phone No:</label>
-                <input type="tel" id="phone" name="phone">
-            </form><br>
-            
-            <button type="submit" form="form1" value="Submit">Submit</button><br><br>
-            <ul id="birthday-list"></ul>
+        <div class="content">
+            <div class="title">
+                <h1>Birthday Reminder!</h1>
+            </div>
+            <div class="form">
+                <form id="add-birthday-form">
+                    <input type="text" name="firstName" placeholder="First Name">
+                    <input type="text" name="lastName" placeholder="Last Name">
+                    <input type="email" name="email" placeholder="Email">
+                    <input type="date" name="dob" placeholder="Date of Birth">
+                    <input type="tel" name="phone" placeholder="Phone No."><br>
+
+                    <button>Add Person</button>
+                </form>
+            </div>
         </div>
-        
+
     </div>
     <script>
-            const firebaseConfig = {
-                apiKey: "AIzaSyC26Nf6Uwzf7dOrrw2DXWfMlXYLRITX1hw",
-                authDomain: "pals-birthday.firebaseapp.com",
-                projectId: "pals-birthday",
-                storageBucket: "pals-birthday.appspot.com",
-                messagingSenderId: "869643730097",
-                appId: "1:869643730097:web:b41eb9e1718a98c3173690",
-                measurementId: "G-8GWP10QEJF"
-            };
-            firebase.initializeApp(firebaseConfig);
-            const db= firebase.firestore();
-            db.settings({ timestampsInSnapshots: true});
-      </script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyC26Nf6Uwzf7dOrrw2DXWfMlXYLRITX1hw",
+            authDomain: "pals-birthday.firebaseapp.com",
+            projectId: "pals-birthday",
+            storageBucket: "pals-birthday.appspot.com",
+            messagingSenderId: "869643730097",
+            appId: "1:869643730097:web:b41eb9e1718a98c3173690",
+            measurementId: "G-8GWP10QEJF"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true });
+    </script>
 
-      <script src="cards.js"></script>
+    <script src="cards.js"></script>
 </body>
+
 </html>
