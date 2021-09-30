@@ -9,6 +9,7 @@ function renderBirthday(doc){
   let dob = document.createElement('span')
   let phone = document.createElement('span')
   let cross = document.createElement('div');
+  let downloadTemplate = document.createElement('span');
 
   li.setAttribute('data-id', doc.id);
   firstName.textContent = doc.data().FirstName;
@@ -17,6 +18,12 @@ function renderBirthday(doc){
   dob.textContent = doc.data().DOB;
   phone.textContent = doc.data().PhoneNo;
   cross.textContent = 'x';
+  downloadTemplate.textContent = "DOWNLOAD TEMPLATE";
+
+  downloadTemplate.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    saveTextAsFile(doc.data().FirstName);
+  })
 
   li.appendChild(firstName);
   li.appendChild(lastName);
@@ -24,6 +31,7 @@ function renderBirthday(doc){
   li.appendChild(dob);
   li.appendChild(phone);
   li.appendChild(cross);
+  li.appendChild(downloadTemplate);
 
   birthdayList.appendChild(li);
 
@@ -65,3 +73,40 @@ db.collection("Birthdays").orderBy("FirstName").onSnapshot(snapshot=>{
     }
   })
 })
+
+
+
+function saveTextAsFile(name)
+{
+  const birthdayTemplate = `
+  <html>
+  <body>
+  <h1>Hello World ${name}</h1>
+  </body>
+  </html>`;
+    var textFileAsBlob = new Blob([birthdayTemplate], {type:'text/plain'});
+    var fileNameToSaveAs = `${name}.html`;
+      var downloadLink = document.createElement("a");
+    downloadLink.download = fileNameToSaveAs;
+    downloadLink.innerHTML = "Download File";
+    if (window.webkitURL != null)
+    {
+        // Chrome allows the link to be clicked
+        // without actually adding it to the DOM.
+        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+    }
+    else
+    {
+        // Firefox requires the link to be added to the DOM
+        // before it can be clicked.
+        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+    }
+
+    downloadLink.click();
+}
+
+
+
