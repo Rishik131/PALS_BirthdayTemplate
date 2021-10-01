@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PALS Happy Birthday</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
+</head>
+
+<body>
+    <!-- NAV  -->
+    <nav>
+        <div class="nav-content">
+            <div class="logo">
+                <img src="./images//logo.png" alt="" width="120" height="120">
+            </div>
+            <div class="content">
+                <h1>Birthday <span class="rem">Reminder!</span></h1>
+                <div class="underline"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO  -->
+    
+
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-img">
+                <img src="./images//hero.svg" alt="" width="560" height="560">
+            </div>
+            <div class="card">
+                <div class="container">
+                    <div class="heading">
+                        <p>Add Person</p>
+                    </div>
+                    <div class="underline-hero"></div>
+                </div>
+                <div class="inputs">
+                    <form id="add-birthday-form">
+                        <input type="text" name="firstName" placeholder="Enter first name" class="input-firstName"><br>
+                        <input type="text" name="lastName" placeholder="Enter last name" class="input-lastName"><br>
+                        <input type="email" name="email" placeholder="Enter email address" class="input-email"><br>
+                        <input placeholder="Enter date of birth" class="input-dob" type="text" name="dob" onfocus="(this.type='date')"
+                            id="date">
+                        <input type="tel" name="phone" placeholder="Enter phone number" class="input-phoneNum"><br>
+                        <button class="btn">Add</button>
+                    </form>
+
+                    
+                </div>
+            </div>
+            <div class="all-person">
+                <p>Added <span class="mem">Members</span></p>
+                
+            </div>
+            <div class="birthday-list-person">
+                <ul id="birthday-list"></ul>
+            </div>
+            <div class="pad"></div>
+        </div>
+        <div class="footer">
+            <div className="footer-info">
+                <p>
+                    Created By <span className="">Vishal Singh</span> | &copy; 2021 All rights
+                    reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyC26Nf6Uwzf7dOrrw2DXWfMlXYLRITX1hw",
+            authDomain: "pals-birthday.firebaseapp.com",
+            projectId: "pals-birthday",
+            storageBucket: "pals-birthday.appspot.com",
+            messagingSenderId: "869643730097",
+            appId: "1:869643730097:web:b41eb9e1718a98c3173690",
+            measurementId: "G-8GWP10QEJF"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true });
+    </script>
+
+    <script src="alert.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>

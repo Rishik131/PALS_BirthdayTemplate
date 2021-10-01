@@ -158,7 +158,6 @@ input[type="date"] {
 }
 
 li {
-  margin-top: 20px;
   padding: 60px;
   background: #ffffff;
   font-size: 10px;
@@ -175,7 +174,6 @@ li:nth-child(even) {
   background: #f2f2f2;
 }
 li:nth-child(odd) {
-  margin-top: 10px;
   padding: 60px;
   background: #f2f2f2;
 }

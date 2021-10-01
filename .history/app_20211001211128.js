@@ -9,14 +9,14 @@ function renderBirthday(doc){
   let dob = document.createElement('span')
   let phone = document.createElement('span')
   let cross = document.createElement('div');
-  let downloadTemplate = document.createElement('button');
+  let downloadTemplate = document.createElement('span');
 
   li.setAttribute('data-id', doc.id);
-  firstName.textContent = `First Name : ${doc.data().FirstName}`;
-  lastName.textContent = `Last Name : ${doc.data().LastName}`;
-  email.textContent = `Email ID : ${doc.data().Email}`;
-  dob.textContent = `Date of birth : ${doc.data().DOB}`;
-  phone.textContent = `Phone Number : ${doc.data().PhoneNo}`;
+  firstName.textContent = doc.data().FirstName;
+  lastName.textContent = doc.data().LastName;
+  email.textContent = doc.data().Email;
+  dob.textContent = doc.data().DOB;
+  phone.textContent = doc.data().PhoneNo;
   cross.textContent = 'x';
   downloadTemplate.textContent = "DOWNLOAD TEMPLATE";
 
@@ -61,6 +61,18 @@ form.addEventListener('submit', (e)=>{
   form.phone.value=''
 });
 
+// REAL TIME LISTENER 
+db.collection("Birthdays").orderBy("FirstName").onSnapshot(snapshot=>{
+  let changes = snapshot.docChanges();
+  changes.forEach(change =>{
+    if(change.type == 'added'){
+      renderBirthday(change.doc);
+    }else if(change.type=='removed'){
+      let li = birthdayList.querySelector('[data-id='+change.doc.id + ']');
+      birthdayList.removeChild(li);
+    }
+  })
+})
 
 
 
@@ -95,16 +107,3 @@ function saveTextAsFile(name)
 
     downloadLink.click();
 }
-
-// REAL TIME LISTENER 
-db.collection("Birthdays").orderBy("FirstName").onSnapshot(snapshot=>{
-  let changes = snapshot.docChanges();
-  changes.forEach(change =>{
-    if(change.type == 'added'){
-      renderBirthday(change.doc);
-    }else if(change.type=='removed'){
-      let li = birthdayList.querySelector('[data-id='+change.doc.id + ']');
-      birthdayList.removeChild(li);
-    }
-  })
-})

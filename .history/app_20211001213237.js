@@ -9,7 +9,7 @@ function renderBirthday(doc){
   let dob = document.createElement('span')
   let phone = document.createElement('span')
   let cross = document.createElement('div');
-  let downloadTemplate = document.createElement('button');
+  let downloadTemplate = document.createElement('span');
 
   li.setAttribute('data-id', doc.id);
   firstName.textContent = `First Name : ${doc.data().FirstName}`;
@@ -95,16 +95,3 @@ function saveTextAsFile(name)
 
     downloadLink.click();
 }
-
-// REAL TIME LISTENER 
-db.collection("Birthdays").orderBy("FirstName").onSnapshot(snapshot=>{
-  let changes = snapshot.docChanges();
-  changes.forEach(change =>{
-    if(change.type == 'added'){
-      renderBirthday(change.doc);
-    }else if(change.type=='removed'){
-      let li = birthdayList.querySelector('[data-id='+change.doc.id + ']');
-      birthdayList.removeChild(li);
-    }
-  })
-})

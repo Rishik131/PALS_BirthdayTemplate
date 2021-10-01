@@ -25,7 +25,7 @@ function renderBirthday(doc){
     saveTextAsFile(doc.data().FirstName);
   })
 
-  li.appendChild(firstName);
+  li.appendChild(firstName, lastName);
   li.appendChild(lastName);
   li.appendChild(email);
   li.appendChild(dob);

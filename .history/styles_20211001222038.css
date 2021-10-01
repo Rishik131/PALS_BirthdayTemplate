@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background: #ffab17;
+  /* background: #ffab17; */
   overflow-x: hidden;
 }
 
@@ -70,6 +70,7 @@ body {
   margin-right: auto;
 }
 
+
 .btn {
   position: absolute;
   width: 230px;
@@ -82,9 +83,9 @@ body {
   font-size: 24px;
   cursor: pointer;
 }
-.btn:hover {
-  background: #d31b18;
-  transition: all 0.5s ease-out;
+.btn:hover{
+    background: #d31b18;
+    transition: all 0.5s ease-out;
 }
 
 .input-firstName {
@@ -145,7 +146,7 @@ input {
 input[type="date"] {
   padding-right: 20px;
 }
-.all-person {
+.all-person{
   margin-top: 50px;
   display: flex;
   justify-content: center;
@@ -153,80 +154,72 @@ input[type="date"] {
   font-size: 26px;
   letter-spacing: 2px;
 }
-.mem {
+.mem{
   color: #d31b18;
 }
 
-li {
-  margin-top: 20px;
-  padding: 60px;
-  background: #ffffff;
-  font-size: 10px;
-  color: #555;
-  position: relative;
-  border-bottom: 1px solid #e6e6e6;
-  list-style: none;
-  font-size: 18px;
-  border-radius: 20px;
+
+li{
+    padding: 60px;
+    background: #ffffff;
+    font-size: 10px;
+    color: #555;
+    position: relative;
+    border-bottom: 1px solid #e6e6e6;
+    list-style: none;
+    font-size: 18px;
+    border-radius: 20px;
 }
-li:nth-child(even) {
-  margin-top: 10px;
-  padding: 60px;
-  background: #f2f2f2;
+li:nth-child(even){
+    padding: 60px;
+    background: #f2f2f2;
 }
-li:nth-child(odd) {
-  margin-top: 10px;
-  padding: 60px;
-  background: #f2f2f2;
+li:nth-child(odd){
+    padding: 60px;
+    background: #f2f2f2;
 }
-li span {
-  display: block;
+li span{
+    display: block;
 }
-li div {
-  position: absolute;
-  top: 0;
-  right: 0px;
-  background: rgba(255, 255, 255, 0.6);
-  width: 40px;
-  text-align: center;
-  padding: 10px 0;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 20px;
+li div{
+    position: absolute;
+    top: 0;
+    right: 0px;
+    background: rgba(255,255,255,0.6);
+    width: 40px;
+    text-align: center;
+    padding: 10px 0;
+    font-weight:  bold;
+    cursor:  pointer;
+    border-radius: 20px;
 }
-li button {
+li button{
   border: 1px solid #000000;
   box-sizing: border-box;
   border-radius: 30px;
   padding: 10px;
   margin-top: 10px;
 }
-li button:hover {
+li button:hover{
   background: #ffb6d7;
-  transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
 }
 
-.birthday-list-person {
+.birthday-list-person{
   margin: auto;
-  max-width: 800px;
+  max-width:800px;
 }
-.pad {
-  margin-bottom: 50px;
-}
+
+
 .footer {
-  font-family: "Poppins", sans-serif;
-  background: linear-gradient(180deg, rgba(255, 182, 215, 0) 0%, #ffb6d7 100%);
+  /* Rectangle 8 */
 
-  padding: 20px;
-}
+/* position: absolute;
+width: 1440px;
+height: 58px;
+left: 0px;
+top: 842px; */
 
-.footer-info{
-  display: flex;
-  justify-content: center;
-}
-.footer-info p{
-  color: black;
-}
-.pals{
-   color: #d31b18;
+background: #FFB6D7;
+
 }
