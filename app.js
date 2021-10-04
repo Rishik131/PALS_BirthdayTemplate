@@ -93,7 +93,7 @@ function saveTextAsFile(name)
       }
       </style>
       <div class="nm">
-      <img src="PALS_BirthdayTemplate/images/confetti.png" alt="confetti">
+      <img src="images/confetti.png" alt="confetti">
       <h1>HAPPY BIRTHDAY!</h1>
       <h1>${name}</h1>
       </div>
