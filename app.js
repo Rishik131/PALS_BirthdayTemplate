@@ -68,9 +68,36 @@ function saveTextAsFile(name)
 {
   const birthdayTemplate = `
   <html>
-  <body>
-  <h1>Hello World ${name}</h1>
-  </body>
+    <body>
+      <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      body{
+        background: rgb(0,142,249);
+        background: linear-gradient(127deg, rgba(0,142,249,1) 25%, rgba(19,158,249,1) 33%, rgba(88,216,251,1) 45%, rgba(94,221,251,1) 48%, rgba(83,215,251,1) 52%, rgba(26,182,254,1) 63%, rgba(0,167,255,1) 71%);
+      }
+      h1{
+        color: white;
+        text-align: center;
+      }
+      div{
+        margin: auto;
+        width: 50%;
+        height: 100vh;
+      }
+      .nm{
+        border: 10px solid white;
+        border-radius: 25px;
+      }
+      </style>
+      <div class="nm">
+      <img src="C:\Users\Lenovo\Desktop\PALS_BirthdayTemplate\images\logo.png" alt="confetti">
+      <h1>HAPPY BIRTHDAY!</h1>
+      <h1>${name}</h1>
+      </div>
+    </body>
   </html>`;
     var textFileAsBlob = new Blob([birthdayTemplate], {type:'text/plain'});
     var fileNameToSaveAs = `${name}.html`;
