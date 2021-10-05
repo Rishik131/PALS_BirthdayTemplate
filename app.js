@@ -161,7 +161,7 @@ function saveTextAsFile(name)
       <img src="images/Left_bottom.png" alt="Left_bottom" class="img2">
       <img src="images/Right_top.png" alt="Right_top" class="img3">
       <img src="images/Right_middle.png" alt="Right_middle" class="img4">
-      <img src="D:\Rishik\VIT\PALS\PALS_BirthdayTemplate\images\right_bottom.png" alt="right_bottom" class="img5">
+      <img src="images/right_bottom.png" alt="right_bottom" class="img5">
     </body>
   </html>`;
     var textFileAsBlob = new Blob([birthdayTemplate], {type:'text/plain'});
