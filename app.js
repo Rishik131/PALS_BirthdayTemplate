@@ -153,7 +153,7 @@ function saveTextAsFile(name)
       }
       </style>
       <div class="container">
-      <img src="images/confetti.png" alt="confetti" class="bg">
+      <img src="images\confetti.png" alt="confetti" class="bg">
       <h1 class="wish">HAPPY BIRTHDAY!</h1>
       <h1 class="name">${name}</h1>
       </div>
