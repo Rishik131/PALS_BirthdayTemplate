@@ -158,7 +158,7 @@ function saveTextAsFile(name)
       <h1 class="name">${name}</h1>
       </div>
       <img src="images/left_top.png" alt="left_top" class="img1">
-      <img src="D:\Rishik\VIT\PALS\PALS_BirthdayTemplate\images\Left_bottom.png" alt="Left_bottom" class="img2">
+      <img src="images/Left_bottom.png" alt="Left_bottom" class="img2">
       <img src="D:\Rishik\VIT\PALS\PALS_BirthdayTemplate\images\Right_top.png" alt="Right_top" class="img3">
       <img src="D:\Rishik\VIT\PALS\PALS_BirthdayTemplate\images\Right_middle.png" alt="Right_middle" class="img4">
       <img src="D:\Rishik\VIT\PALS\PALS_BirthdayTemplate\images\right_bottom.png" alt="right_bottom" class="img5">
