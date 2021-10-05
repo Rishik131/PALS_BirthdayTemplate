@@ -157,11 +157,11 @@ function saveTextAsFile(name)
       <h1 class="wish">HAPPY BIRTHDAY!</h1>
       <h1 class="name">${name}</h1>
       </div>
-      <img src="images/left_top.png" alt="left_top" class="img1">
-      <img src="images/Left_bottom.png" alt="Left_bottom" class="img2">
-      <img src="images/Right_top.png" alt="Right_top" class="img3">
-      <img src="images/Right_middle.png" alt="Right_middle" class="img4">
-      <img src="images/right_bottom.png" alt="right_bottom" class="img5">
+      <img src="https://github.com/Rishik131/PALS_BirthdayTemplate/blob/main/images/left_top.png?raw=true" alt="left_top" class="img1">
+      <img src="https://github.com/Rishik131/PALS_BirthdayTemplate/blob/main/images/Left_bottom.png?raw=true" alt="Left_bottom" class="img2">
+      <img src="https://github.com/Rishik131/PALS_BirthdayTemplate/blob/main/images/Right_top.png?raw=true" alt="Right_top" class="img3">
+      <img src="https://github.com/Rishik131/PALS_BirthdayTemplate/blob/main/images/Right_middle.png?raw=true" alt="Right_middle" class="img4">
+      <img src="https://github.com/Rishik131/PALS_BirthdayTemplate/blob/main/images/right_bottom.png?raw=true" alt="right_bottom" class="img5">
     </body>
   </html>`;
     var textFileAsBlob = new Blob([birthdayTemplate], {type:'text/plain'});
