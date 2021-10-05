@@ -66,8 +66,13 @@ form.addEventListener('submit', (e)=>{
 
 function saveTextAsFile(name)
 {
-  const birthdayTemplate = `
+  const birthdayTemplate = String.raw `
   <html>
+    <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
+    </head>
     <body>
       <style>
       *{
@@ -79,24 +84,84 @@ function saveTextAsFile(name)
         background: linear-gradient(127deg, rgba(0,142,249,1) 25%, rgba(19,158,249,1) 33%, rgba(88,216,251,1) 45%, rgba(94,221,251,1) 48%, rgba(83,215,251,1) 52%, rgba(26,182,254,1) 63%, rgba(0,167,255,1) 71%);
       }
       h1{
+        position: absolute;
         color: white;
         text-align: center;
+        font-family: 'Birthstone', cursive;
+        font-size: 80px;
+        top: 0px;
       }
-      div{
+      .container{
+        position: relative;
+        z-index:0;
         margin: auto;
+        margin-top: 30px;
         width: 50%;
         height: 100vh;
-      }
-      .nm{
+        max-height: 1000px;
         border: 10px solid white;
         border-radius: 25px;
+        overflow: hidden;
+      }
+      .wish{
+        left: 20%;
+      }
+      .name{
+        top: 70px;
+        left: 35%;
+      }
+      .bg{
+        position: relative;
+        z-index: -1;
+        margin: auto;
+        width: 100%;
+      }
+      .img1{
+        position: absolute;
+        width: 125px;
+        height: auto;
+        left: 23%;
+        top: 200px;
+      }
+      .img2{
+        position: absolute;
+        width: 145px;
+        height: auto;
+        left: 26%;
+        top: 320px;
+      }
+      .img3{
+        position: absolute;
+        width: 140px;
+        height: auto;
+        top: 170px;
+        left: 67%;
+      }
+      .img4{
+        position: absolute;
+        width: 100px;
+        height: auto;
+        top: 290px;
+        left: 64%;
+      }
+      .img5{
+        position: absolute;
+        width: 120px;
+        height: auto;
+        top: 350px;
+        left: 67%;
       }
       </style>
-      <div class="nm">
-      <img src="images/confetti.png" alt="confetti">
-      <h1>HAPPY BIRTHDAY!</h1>
-      <h1>${name}</h1>
+      <div class="container">
+      <img src="D:\Rishik\VIT\PALS\PALS_BirthdayTemplate\images\confetti.png" alt="confetti" class="bg">
+      <h1 class="wish">HAPPY BIRTHDAY!</h1>
+      <h1 class="name">${name}</h1>
       </div>
+      <img src="D:\Rishik\VIT\PALS\PALS_BirthdayTemplate\images\left_top.png" alt="left_top" class="img1">
+      <img src="D:\Rishik\VIT\PALS\PALS_BirthdayTemplate\images\Left_bottom.png" alt="Left_bottom" class="img2">
+      <img src="D:\Rishik\VIT\PALS\PALS_BirthdayTemplate\images\Right_top.png" alt="Right_top" class="img3">
+      <img src="D:\Rishik\VIT\PALS\PALS_BirthdayTemplate\images\Right_middle.png" alt="Right_middle" class="img4">
+      <img src="D:\Rishik\VIT\PALS\PALS_BirthdayTemplate\images\right_bottom.png" alt="right_bottom" class="img5">
     </body>
   </html>`;
     var textFileAsBlob = new Blob([birthdayTemplate], {type:'text/plain'});
