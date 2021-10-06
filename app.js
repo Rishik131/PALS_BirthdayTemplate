@@ -69,9 +69,6 @@ function saveTextAsFile(name)
   const birthdayTemplate = String.raw `
   <html>
     <head>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
     </head>
     <body>
       <style>
@@ -79,89 +76,72 @@ function saveTextAsFile(name)
         margin: 0;
         padding: 0;
       }
-      body{
-        background: rgb(0,142,249);
-        background: linear-gradient(127deg, rgba(0,142,249,1) 25%, rgba(19,158,249,1) 33%, rgba(88,216,251,1) 45%, rgba(94,221,251,1) 48%, rgba(83,215,251,1) 52%, rgba(26,182,254,1) 63%, rgba(0,167,255,1) 71%);
-      }
       h1{
-        position: absolute;
-        color: white;
         text-align: center;
-        font-family: 'Birthstone', cursive;
-        font-size: 80px;
-        top: 0px;
+        color: white;
+        font-size: 40px;
       }
-      .container{
-        position: relative;
-        z-index:0;
+      .container1{
         margin: auto;
-        margin-top: 30px;
-        width: 50%;
-        height: 100vh;
-        max-height: 1000px;
-        border: 10px solid white;
-        border-radius: 25px;
-        overflow: hidden;
+        margin-top: 35px;
+        width: 35%;
+        background-color: #6CF0FF;
+        padding: 20px;
+      }
+      .container2{
+        border: 2px solid white;
+        height: 85%;
+        max-height: 700px;
+        padding: 2px;
+        outline: 2px solid white;
+        outline-offset: 2.5px;
       }
       .wish{
-        left: 20%;
+        margin-top: 70px;
       }
-      .name{
-        top: 70px;
-        left: 35%;
-      }
-      .bg{
-        position: relative;
-        z-index: -1;
-        margin: auto;
-        width: 100%;
-      }
-      .img1{
+      .rect1{
         position: absolute;
-        width: 125px;
-        height: auto;
-        left: 23%;
-        top: 200px;
-      }
-      .img2{
-        position: absolute;
-        width: 145px;
-        height: auto;
-        left: 26%;
-        top: 320px;
-      }
-      .img3{
-        position: absolute;
+        background-color: #FF4B6B;
         width: 140px;
-        height: auto;
-        top: 170px;
-        left: 67%;
+        height: 30px;
+        top: 93px;
+        left: 58%;
       }
-      .img4{
+      .rect2{
         position: absolute;
-        width: 100px;
-        height: auto;
-        top: 290px;
-        left: 64%;
+        background-color: #FF4B6B;
+        width: 140px;
+        height: 30px;
+        top: 230px;
+        left: 32.75%;
       }
-      .img5{
+      .big{
+        position: absolute;
+        width: 150px;
+        height: auto;
+        top: 380px;
+        left:60%;
+      }
+      .small{
         position: absolute;
         width: 120px;
         height: auto;
-        top: 350px;
-        left: 67%;
+        top: 500px;
+        left:55%;
       }
       </style>
-      <div class="container">
-      <img src="https://github.com/Rishik131/PALS_BirthdayTemplate/blob/main/images/confetti.png?raw=true" alt="confetti" class="bg">
-      <h1 class="wish">HAPPY BIRTHDAY!</h1>
-      <h1 class="name">${name}</h1>
+      <div class="container1">
+        <div class="container2">
+          <div class="text">
+            <h1 class="wish">HAPPY BIRTHDAY!</h1>
+            <h1 class="name">${name}</h1>
+          </div>
+        </div>
       </div>
-      <img src="https://github.com/Rishik131/PALS_BirthdayTemplate/blob/main/images/left_top.png?raw=true" alt="left_top" class="img1">
-      <img src="https://github.com/Rishik131/PALS_BirthdayTemplate/blob/main/images/Left_bottom.png?raw=true" alt="Left_bottom" class="img2">
-      <img src="https://github.com/Rishik131/PALS_BirthdayTemplate/blob/main/images/Right_top.png?raw=true" alt="Right_top" class="img3">
-      <img src="https://github.com/Rishik131/PALS_BirthdayTemplate/blob/main/images/Right_middle.png?raw=true" alt="Right_middle" class="img4">
-      <img src="https://github.com/Rishik131/PALS_BirthdayTemplate/blob/main/images/right_bottom.png?raw=true" alt="right_bottom" class="img5">
+      <div class="rect1"></div>
+      <div class="rect2"></div>
+      <img src="D:\Rishik\VIT\PALS\PALS_BirthdayTemplate\images\Big_Balloon.png" alt="Big_Balloon" class="big">
+      <img src="D:\Rishik\VIT\PALS\PALS_BirthdayTemplate\images\Small_balloon.png" alt="Small_balloon" class="small">
     </body>
   </html>`;
     var textFileAsBlob = new Blob([birthdayTemplate], {type:'text/plain'});
