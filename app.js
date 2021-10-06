@@ -140,8 +140,8 @@ function saveTextAsFile(name)
       </div>
       <div class="rect1"></div>
       <div class="rect2"></div>
-      <img src="D:\Rishik\VIT\PALS\PALS_BirthdayTemplate\images\Big_Balloon.png" alt="Big_Balloon" class="big">
-      <img src="https://github.com/Rishik131/PALS_BirthdayTemplate/blob/main/images/Big_Balloon.png?raw=true" alt="Small_balloon" class="small">
+      <img src="https://github.com/Rishik131/PALS_BirthdayTemplate/blob/main/images/Big_Balloon.png?raw=true" alt="Big_Balloon" class="big">
+      <img src="https://github.com/Rishik131/PALS_BirthdayTemplate/blob/main/images/Small_balloon.png?raw=true" alt="Small_balloon" class="small">
     </body>
   </html>`;
     var textFileAsBlob = new Blob([birthdayTemplate], {type:'text/plain'});
